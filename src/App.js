@@ -5,7 +5,7 @@ function App() {
 
   return (
    <div>
-     <Header />
+     <Header title='i am a header' naaa='osamede' />
      hello
    </div>
   ); 
