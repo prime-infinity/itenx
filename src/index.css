@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.added{
+  background-color: red;
+}
+.task{
+  border:2px solid blue;
+}
