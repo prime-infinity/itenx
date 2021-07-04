@@ -5,7 +5,6 @@ function Additem({onAdd}){
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [hobby, setHobby] = useState('');
-    const [state, setState] = useState(false);
 
     var submitted = (e) => {
         e.preventDefault()
