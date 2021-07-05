@@ -1,0 +1,47 @@
+{
+  "list": [
+    {
+      "id":1,
+      "name":"something",
+      "discription":"this is the discription of the first one",
+      "support": true
+    },
+    {
+      "id":2,
+      "name":"something else",
+      "discription":"this is the discription of the second second",
+      "support": true
+    },
+    {
+      "id":3,
+      "name":"one thing one thing",
+      "discription":"colling p my guy",
+      "support": false
+    },
+    {
+      "id":4,
+      "name":"tion everywhere,",
+      "discription":"except where has already been tiond",
+      "support": true
+    }
+  ],
+
+  
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

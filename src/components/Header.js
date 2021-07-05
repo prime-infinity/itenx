@@ -1,25 +1,24 @@
 
-var timee =  false;
-var style = {
-    color:'red',
-    backgroundColor:'blue',
-}
+import { Link } from 'react-router-dom' 
 
-var style2 = {
-    color:'black',
-    backgroundColor:'green',
-}
+function Header(){
 
-function Header({title,naaa}){
-
-    setTimeout(() => {
-        timee  = true
-    }, 2000);
     return(
-        <div style={timee ? style:style2} >
-            header says {title} of name {naaa}
+        <div>
+            <ul>
+                <li>
+                    <Link  to="/"> Home </Link>
+                </li>
+                <li>
+                    <Link to="/about" > About </Link>
+                </li>
+                <li>
+                    <Link to="/list" > list </Link>
+                </li>
+            </ul>
         </div>
     );
+   
 }
 
 
