@@ -1,5 +1,5 @@
 
-function Items({ittt,onDelete, onToggle}){
+function Items({ittt, onToggle}){
 
     return(
         <div>
