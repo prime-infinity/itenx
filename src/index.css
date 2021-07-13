@@ -1,0 +1,24 @@
+.customInputButton{
+    width:100%;
+    border-radius: 0px;
+    height:56px;
+    background:black;
+    color:white;
+}
+.customInputButton:focus,
+.customInputButton:hover{
+    transition: .5s ease;
+    border:1px solid black;
+    background-color: white;
+    box-shadow: 0 0 0 0;
+}
+.customInput{
+    border-radius: 0px;
+    height:56px;
+}
+.customInput:focus,
+.customInput:hover{
+    transition:.5s ease;
+    border:1px solid black;
+    box-shadow: inset 0 0  0.1rem 0 #262421;
+}
