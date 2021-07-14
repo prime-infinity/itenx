@@ -3,7 +3,20 @@ import CardOne from '../../components/ui/CardOne'
 import { Link } from 'react-router-dom';
 import '../../index.css'
 
+import httpOps from '../../services/http'
+
 function Register(){
+
+    function registerUser(){
+        httpOps.createUser()
+        .then((res) =>{
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
+
     return(
 
         <div className="row">
@@ -32,7 +45,7 @@ function Register(){
                             </div>
 
                             <button type="submit" className="btn customInputButton">
-                                <div>Register</div>
+                                <div onClick={registerUser} >Register</div>
                             </button>
 
                             <div className="text-center mt-4">
