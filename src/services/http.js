@@ -8,6 +8,14 @@ class httpOperations{
             password:password
         })
     }
+    login(name,password){
+        return axios.get("http://localhost:5000/users",{
+            params:{
+                name:name,
+                password:password
+            }
+        })
+    }
 }
 
 export default new httpOperations();

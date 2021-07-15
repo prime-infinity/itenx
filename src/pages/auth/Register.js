@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 import '../../index.css'
 
 import httpOps from '../../services/http'
+import { useState } from 'react';
 
 function Register(){
 
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [ConfirmPassword, setConPass] = useState('');
+
     function registerUser(){
-        httpOps.createUser()
+        httpOps.createUser(name,email,password)
         .then((res) =>{
             console.log(res)
         })
@@ -29,19 +35,30 @@ function Register(){
                         <CardOne>
 
                             <div className="form-group mb-5 mt-2">
-                                <input type="text" placeholder="Name" className={`form-control customInput ${classes.customInput}`} />
+                                <input value={name} onChange={ 
+                                    (e) => setName(e.target.value)
+                                } type="text" placeholder="Name" className={`form-control customInput ${classes.customInput}`} />
                             </div>
 
                             <div className="form-group mb-5 mt-2">
-                                <input type="text" placeholder="Email or Phone Number" className={`form-control customInput ${classes.customInput}`} />
+                                <input value={email} 
+                                onChange={
+                                    (e) => setEmail(e.target.value)
+                                } type="text" placeholder="Email or Phone Number" className={`form-control customInput ${classes.customInput}`} />
                             </div>
 
                             <div className="form-group mb-5 mt-5">
-                                <input type="text" placeholder="Password" className={`form-control customInput ${classes.customInput}`} />
+                                <input value={password}
+                                onChange={
+                                    (e) => setPassword(e.target.value)
+                                }  type="text" placeholder="Password" className={`form-control customInput ${classes.customInput}`} />
                             </div>
 
                             <div className="form-group mb-5 mt-5">
-                                <input type="text" placeholder="Confirm Password" className={`form-control customInput ${classes.customInput}`} />
+                                <input value={ConfirmPassword} 
+                                onChange={
+                                    (e) => setConPass(e.target.value)
+                                }type="text" placeholder="Confirm Password" className={`form-control customInput ${classes.customInput}`} />
                             </div>
 
                             <button type="submit" className="btn customInputButton">

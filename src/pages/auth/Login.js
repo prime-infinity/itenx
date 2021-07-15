@@ -3,7 +3,30 @@ import CardOne from '../../components/ui/CardOne'
 import { Link } from 'react-router-dom';
 import '../../index.css'
 
+import httpOps from '../../services/http'
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 function Login(){
+
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
+    const history = useHistory()
+
+    function loginUser(){
+        httpOps.login(name,password)
+        .then((res) => {
+            if(res.data.length > 0){
+                history.push('/')
+            }else{
+               alert("leave")
+            }
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
+
     return(
 
         <div className="row">
@@ -16,14 +39,14 @@ function Login(){
                         
                         <CardOne>
                             <div className="form-group mb-5 mt-2">
-                                <input type="text" placeholder="Email or Phone Number" className={`form-control customInput ${classes.customInput}`} />
+                                <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Email or Phone Number" className={`form-control customInput ${classes.customInput}`} />
                             </div>
 
                             <div className="form-group mb-5 mt-5">
-                                <input type="text" placeholder="Password" className={`form-control customInput ${classes.customInput}`} />
+                                <input value={password} onChange={(e) => setPassword(e.target.value)} type="text" placeholder="Password" className={`form-control customInput ${classes.customInput}`} />
                             </div>
 
-                            <button type="submit" className="btn customInputButton">
+                            <button onClick={loginUser} type="submit" className="btn customInputButton">
                                 <div>Sign in</div>
                             </button>
 

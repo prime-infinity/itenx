@@ -26,7 +26,12 @@
     }
   ],
   "users": [
-    
+    {
+      "name": "osamede",
+      "email": "osamede@gmail.com",
+      "password": "123456",
+      "id": 1
+    }
   ],
   "goods": [],
   "posts": [
