@@ -6,8 +6,11 @@ import '../../index.css'
 import httpOps from '../../services/http'
 import { useState } from 'react';
 
-function Register(){
+import { useHistory } from 'react-router-dom';
 
+function Register(){
+    const history = useHistory()
+    
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,7 +19,7 @@ function Register(){
     function registerUser(){
         httpOps.createUser(name,email,password)
         .then((res) =>{
-            console.log(res)
+            history.push('/login')
         })
         .catch((err) => {
             console.log(err)

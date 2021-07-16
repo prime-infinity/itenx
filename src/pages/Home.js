@@ -1,10 +1,33 @@
 
-
+import httpOps from '../services/http'
+import { useState, useEffect } from 'react';
 const Home = () =>{
-    return(
-        <div> 
 
-            this is main alive
+    const [stuff, setStuff] = useState([])
+
+    useEffect(() => {
+        fetchStuff()
+    }, [])
+
+    function fetchStuff(){
+        httpOps.getStuffs()
+        .then((res) => {
+            setStuff(res.data)
+        })
+        .catch((err) => {
+           console.log(err)
+        })
+    }
+
+    return(
+        <div className="row"> 
+
+            {stuff.map((stuffs) => {
+                <div className="col-3" key={stuffs.id}>
+
+                </div>
+            })}
+            
         </div>
     );
 }

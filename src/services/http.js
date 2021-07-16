@@ -16,6 +16,9 @@ class httpOperations{
             }
         })
     }
+    getStuffs(){
+        return axios.get("http://localhost:5000/stuffs")
+    }
 }
 
 export default new httpOperations();
