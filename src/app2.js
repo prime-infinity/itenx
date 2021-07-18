@@ -96,3 +96,59 @@ function App() {
 }
 
 export default App;
+
+
+
+
+return(authCtx.auth.name ? 
+
+        <button>you are already logged in</button>:
+        
+        <div className="row">
+            
+            <div className="col-12">
+
+                <div className="row pt-5">
+                    
+                    <div className="col-11 col-md-5 col-lg-5 mx-auto mt-5">
+                        
+                        <CardOne>
+                            <div className="form-group mb-5 mt-2">
+                                <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Email or Phone Number" className={`form-control customInput ${classes.customInput}`} />
+                            </div>
+
+                            <div className="form-group mb-5 mt-5">
+                                <input value={password} onChange={(e) => setPassword(e.target.value)} type="text" placeholder="Password" className={`form-control customInput ${classes.customInput}`} />
+                            </div>
+
+                            <button onClick={loginUser} type="submit" className="btn customInputButton">
+                                <div>Sign in</div>
+                            </button>
+
+                            <div className="text-center mt-4">
+                                Not yet a member <br></br> <Link  to="register">Create an account</Link>
+                            </div>
+
+                        </CardOne> 
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    );
+
+    <button className="btn btn-danger" onClick={logoutUnauth}>Logout</button>
+            <button className="btn btn-primary" onClick={showAuth}>showauth</button>
+            <Link to="/login" ><button className="btn btn-primary">login</button></Link>
+
+            {authCtx.auth.name ? 'logged in' : 'not logged in'}
+
+            {stuff.map((stuffs) => {
+              <div className="col-3" key={stuffs.id}>
+                  <div>
+
+                  </div>
+              </div>
+          })}

@@ -32,10 +32,13 @@ function Login(){
         .catch((err) => {
             console.log(err)
         })
-    }
+    }  
 
-    return(
+    
+    return(authCtx.auth.name ? 
 
+        <button>you are already logged in</button>:
+        
         <div className="row">
             
             <div className="col-12">

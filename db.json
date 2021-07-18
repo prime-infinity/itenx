@@ -9,7 +9,36 @@
     }
   ],
   "stuffs":[
-    
+    {
+      "id": 1,
+      "name": "osamede",
+      "image": "a.jpg"
+    },
+    {
+      "id": 2,
+      "name": "osamede",
+      "image": "b.jpg"
+    },
+    {
+      "id": 3,
+      "name": "osamede",
+      "image": "c.jpg"
+    },
+    {
+      "id": 4,
+      "name": "osamede",
+      "image": "q.jpg"
+    },
+    {
+      "id": 5,
+      "name": "osamede",
+      "image": "w.jpg"
+    },
+    {
+      "id": 6,
+      "name": "osamede",
+      "image": "y.jpg"
+    }
   ],
   "posts": [
     {
