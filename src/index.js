@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
 
 import App from './App';
+import {AuthStatusProvider} from './store/authStatus'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <AuthStatusProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthStatusProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

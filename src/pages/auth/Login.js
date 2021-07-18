@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import '../../index.css'
 
 import httpOps from '../../services/http'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import AuthStatusContext from '../../store/authStatus'
+
 
 function Login(){
+    const authCtx = useContext(AuthStatusContext);
 
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -17,7 +20,11 @@ function Login(){
         httpOps.login(name,password)
         .then((res) => {
             if(res.data.length > 0){
+
+                authCtx.authenticate(res.data[0])
+
                 history.push('/')
+
             }else{
                alert("leave")
             }
