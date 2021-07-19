@@ -145,10 +145,4 @@ return(authCtx.auth.name ?
 
             {authCtx.auth.name ? 'logged in' : 'not logged in'}
 
-            {stuff.map((stuffs) => {
-              <div className="col-3" key={stuffs.id}>
-                  <div>
-
-                  </div>
-              </div>
-          })}
+            

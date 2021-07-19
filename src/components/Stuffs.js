@@ -3,6 +3,8 @@ import { useState, useEffect} from 'react';
 
 import '../index.css'
 
+import ParticularStuff from './ParticularStuff'
+
 function Stuff(){
 
     const [stuff, setStuff] = useState([])
@@ -15,7 +17,6 @@ function Stuff(){
         httpOps.getStuffs()
         .then((res) => {
             setStuff(res.data)
-            console.log(res.data)
         })
         .catch((err) => {
            console.log(err)
@@ -23,14 +24,14 @@ function Stuff(){
     }
    
     return(
-        <div className="row mt-5 mb-5"> 
+        <div className="row mt-5 mb-5 justify-content-center"> 
 
             {stuff.map((stuffs) => (
-                <div className="col-md-3 col-12 mb-4 blackBorder" key={stuffs.id}>
-                    <img className="img-fluid" src={` /stuffimages/${stuffs.image }`} alt="image"/>
-                </div>
-            ))}
 
+                <ParticularStuff key={stuffs.id} stuffprop={stuffs} />
+                
+            ))}
+            
         </div>
     );
    
