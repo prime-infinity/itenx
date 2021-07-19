@@ -1,7 +1,7 @@
-import httpOps from '../services/http'
+import httpOps from '../../services/http'
 import { useState, useEffect} from 'react';
 
-import '../index.css'
+import '../../index.css'
 
 import ParticularStuff from './ParticularStuff'
 

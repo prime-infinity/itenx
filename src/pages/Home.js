@@ -1,5 +1,5 @@
 
-import Stuff from '../components/Stuffs'
+import Stuff from '../components/stuffs/Stuffs'
 
 import { useContext } from 'react';
 
