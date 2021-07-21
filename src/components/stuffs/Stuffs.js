@@ -4,10 +4,12 @@ import { useState, useEffect} from 'react';
 import '../../index.css'
 
 import ParticularStuff from './ParticularStuff'
+import Backdrop from '../ui/Backdrop'
 
 function Stuff(){
 
     const [stuff, setStuff] = useState([])
+    const [isBackdrop, setBackdrop] = useState(false)
 
     useEffect(() => {
         fetchStuff()
@@ -22,9 +24,15 @@ function Stuff(){
            console.log(err)
         })
     }
+
+    function dropBackdrop(){
+        setBackdrop(false)
+    }
    
     return(
         <div className="row mt-5 mb-5 justify-content-center"> 
+
+            {isBackdrop && <Backdrop  onDrop={dropBackdrop}/>}
 
             {stuff.map((stuffs) => (
 

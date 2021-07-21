@@ -1,5 +1,5 @@
 
-import classes from './Card.module.css';
+import classes from './Ui.module.css';
 
 function CardOne(props){
     return(
